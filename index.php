@@ -13,8 +13,5 @@
     <div id="content">
         <h1 class="text-center font-bold text-9xl">Contact</h1>
     </div>
-    <footer>
-        <?php include "footer.php"; ?>
-    </footer>
-</body>
-</html>
+<?php include_once "footer.php"; ?>
+
