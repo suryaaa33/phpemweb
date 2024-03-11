@@ -1,9 +1,13 @@
+<?php
+include "header.php";
+include "footer.php";
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tugas 1 PHP</title>
+    <title>Halaman Report Tugas 2 PHP</title>
     <style>
         table, tr{
             width: 50%;
@@ -32,7 +36,7 @@
 <?php
 
 
-echo '<h2>Tugas 1 Pemrograman Web</h2>';
+echo '<h2>Halaman Report Tugas 2 Pemrograman Web</h2>';
 echo '<h3>Suryandari Puspita Hartiati (2210130007)</h3>';
 $tokoelektronik = array(
     array("No"=>1,"Kategori"=>"pembayaran pesanan","Keterangan"=>" ","Pemasukan"=>1000000,"Pengeluaran"=>0),
@@ -69,8 +73,9 @@ foreach ($tokoelektronik as $index => $barang)
     $pengeluaran_format = "-";
     if ($barang['Pengeluaran'] != 0) {
         $pengeluaran_format = format_rupiah($barang['Pengeluaran']);
-        $total_pengeluaran == $barang['Pengeluaran'];
+        $total_pengeluaran += $barang['Pengeluaran'];
     }
+    $total_saldo = $total_pemasukan - $total_pengeluaran;
     ?>
     <tr>
     <td><?php echo $barang["No"];?></td>
@@ -78,7 +83,7 @@ foreach ($tokoelektronik as $index => $barang)
     <td><?php echo $barang["Kategori"];?></td>
     <td><?php echo$barang["Keterangan"];?></td>
     <td align="left"><?php echo$pemasukan_format;?></td>
-    <td align="lefts"><?php echo$pengeluaran_format;?></td>
+    <td align="left"><?php echo$pengeluaran_format;?></td>
     
     </tr>
     <?php
@@ -91,7 +96,7 @@ $total_saldo_format = format_rupiah($total_saldo);
 <tr >
     <td colspan="4" align="right" ><b>TOTAL</b></td>
     <td align="center"><b><?php echo $total_pemasukan_format; ?></b></td>
-    <td align="center"><b><?php echo $pengeluaran_format; ?></b></td>
+    <td align="center"><b><?php echo $total_pengeluaran_format; ?></b></td>
 </tr>
 <tr >
     <td colspan="4" align="right" ><b>SALDO</b></td>

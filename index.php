@@ -11,7 +11,7 @@
 <body>
 <?php include "header.php"; ?>
     <div id="content">
-        <h1 class="text-center font-bold text-9xl">Contact</h1>
+        <h1 class="text-center font-bold text-9xl">HALAMAN UTAMA NIH</h1>
     </div>
 <?php include_once "footer.php"; ?>
 

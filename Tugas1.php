@@ -1,9 +1,13 @@
+<?php
+include "header.php";
+include "footer.php";
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tugas 1 PHP</title>
+    <title>Halaman Products Tugas 1 PHP</title>
     <style>
         table, tr{
             width: 50%;
@@ -34,7 +38,7 @@ $speaker = 0;
 $printerepson = 0;
 
 
-echo '<h2>Tugas 1 Pemrograman Web</h2>';
+echo '<h2>Halaman Products Tugas 1 Pemrograman Web</h2>';
 echo '<h3>Suryandari Puspita Hartiati (2210130007)</h3>';
 $tokoelektronik = array(
     array("No"=>1,"Kode"=>"B001","Nama Barang"=>"Laptop Asus","Harga"=>9000000,"Jumlah"=>3),

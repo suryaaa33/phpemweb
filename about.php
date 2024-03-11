@@ -1,5 +1,5 @@
 <?php
 include "header.php";
-echo "INI ABOUT";
+echo "<h1>INI ABOUT</h1>";
 include "footer.php";
 ?>

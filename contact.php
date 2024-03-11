@@ -1,5 +1,5 @@
 <?php
 include "header.php";
-echo "CALL ME 089699072963 HEHEHEH";
+echo "<h1>CALL 089699072963 FOR MORE INFO</h1>";
 include "footer.php";
 ?>
