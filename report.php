@@ -31,11 +31,6 @@
         </tr>
 <?php
 
-$laptopasus = 0;
-$keyboardlogitech = 0;
-$speaker = 0;
-$printerepson = 0;
-
 
 echo '<h2>Tugas 1 Pemrograman Web</h2>';
 echo '<h3>Suryandari Puspita Hartiati (2210130007)</h3>';
@@ -57,37 +52,50 @@ function format_rupiah($angka){
     return $rupiah;
 }
 
-// function subtotal($barang){
-//     $subtotalz = $barang['Pemasukan'] * $barang['Jumlah'];
-//     return $subtotalz;
-// }
 
 $arr = array('01-03-2023','01-03-2023','08-03-2023','09-03-2023','09-03-2023', '16-03-2023','16-03-2023','15-03-2023','16-02-2023','24-03-2023');
 
+$total_pemasukan = 0;
+$total_pengeluaran = 0;
+$total_saldo = 0;
+
 foreach ($tokoelektronik as $index => $barang)
 {
-    //$subtotal = subtotal($barang); 
-    //$total += $subtotal;
-    $pemasukan_format = format_rupiah($barang['Pemasukan']);
-    //$subtotal_format = format_rupiah($subtotal);
+    $pemasukan_format = "-";
+    if ($barang['Pemasukan'] != 0) {
+        $pemasukan_format = format_rupiah($barang['Pemasukan']);
+        $total_pemasukan += $barang['Pemasukan'];
+    }
+    $pengeluaran_format = "-";
+    if ($barang['Pengeluaran'] != 0) {
+        $pengeluaran_format = format_rupiah($barang['Pengeluaran']);
+        $total_pengeluaran == $barang['Pengeluaran'];
+    }
     ?>
     <tr>
     <td><?php echo $barang["No"];?></td>
     <td><?php echo $arr[$index];?></td>
     <td><?php echo $barang["Kategori"];?></td>
     <td><?php echo$barang["Keterangan"];?></td>
-    <td align="right"><?php echo$pemasukan_format;?></td>
-    <td align="center"><?php echo$barang["Pengeluaran"];?></td>
+    <td align="left"><?php echo$pemasukan_format;?></td>
+    <td align="lefts"><?php echo$pengeluaran_format;?></td>
     
     </tr>
     <?php
 }
 
-$total_format = format_rupiah($total);
+$total_pemasukan_format = format_rupiah($total_pemasukan);
+$total_pengeluaran_format = format_rupiah($total_pengeluaran);
+$total_saldo_format = format_rupiah($total_saldo);
 ?>
 <tr >
-    <td colspan="5" align="right" ><b>TOTAL</b></td>
-    <td align="right"><b><?php echo $total_format; ?></b></td>
+    <td colspan="4" align="right" ><b>TOTAL</b></td>
+    <td align="center"><b><?php echo $total_pemasukan_format; ?></b></td>
+    <td align="center"><b><?php echo $pengeluaran_format; ?></b></td>
+</tr>
+<tr >
+    <td colspan="4" align="right" ><b>SALDO</b></td>
+    <td colspan = "5" align="center"><b><?php echo $total_saldo_format;?></b></td>
 </tr>
 </table>
 </body>
